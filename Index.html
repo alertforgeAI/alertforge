@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta (aligned with alertforge.ai) -->
+  <title>AI Video Generator &amp; Stream Alert Maker — Transparent Videos | AlertForge</title>
+  <meta name="description" content="Generate AI videos with no background and animated stream alerts in minutes. Transparent WebM exports with alpha channel. No After Effects, no green screen. Try free." />
+  <meta name="keywords" content="transparent video generator, ai video no background, ai transparent video, remove background from video, webm alpha channel, green screen video generator, twitch alert maker, obs alerts, stream alerts, transparent webm, ai alert generator, obs browser source overlay, animated stream alerts, youtube stream alerts, kick alerts, ai motion graphics, stream overlay maker" />
+  <meta name="author" content="AlertForge" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1" />
+  <meta name="theme-color" content="#06070d" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Canonical points to the original domain so ranking signals consolidate there -->
+  <link rel="canonical" href="https://alertforge.ai/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AlertForge" />
+  <meta property="og:title" content="AI Video Generator &amp; Stream Alert Maker — Transparent Videos | AlertForge" />
+  <meta property="og:description" content="Generate AI transparent videos and animated stream alerts. WebM with alpha channel. No green screen, no After Effects." />
+  <meta property="og:url" content="https://alertforge.ai/" />
+  <meta property="og:image" content="https://alertforge.ai/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AlertForge — AI Transparent Video Generator & Stream Alerts" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Video Generator &amp; Stream Alert Maker — Transparent Videos | AlertForge" />
+  <meta name="twitter:description" content="Generate AI transparent videos and animated stream alerts. WebM with alpha channel. No green screen, no After Effects." />
+  <meta name="twitter:image" content="https://alertforge.ai/og-image.png" />
+  <meta name="twitter:image:alt" content="AlertForge AI transparent video and stream alerts" />
+
+  <!-- Icons (served from the live domain) -->
+  <link rel="icon" href="https://alertforge.ai/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="https://alertforge.ai/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://alertforge.ai/#org",
+        "name": "AlertForge",
+        "url": "https://alertforge.ai/",
+        "logo": "https://alertforge.ai/apple-touch-icon.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alertforge.ai/#site",
+        "url": "https://alertforge.ai/",
+        "name": "AlertForge",
+        "publisher": { "@id": "https://alertforge.ai/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "AlertForge",
+        "operatingSystem": "Web, Windows, macOS",
+        "applicationCategory": "MultimediaApplication",
+        "url": "https://alertforge.ai/",
+        "description": "AI transparent video generator and stream alert maker. Turn a text prompt or image into a transparent WebM with alpha channel — animated stream alerts for Twitch, YouTube, and Kick, ready for OBS in minutes. No green screen, no After Effects.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Text-to-video and image-to-video generation",
+          "Transparent WebM export with alpha channel",
+          "Green screen MP4 export plus sound effects",
+          "Automatic background removal",
+          "AI-animated alert packs for Twitch, YouTube, and Kick",
+          "Viewer-generated alerts that play live on stream",
+          "OBS Browser Source, Streamlabs, and StreamElements compatible"
+        ],
+        "publisher": { "@id": "https://alertforge.ai/#org" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does AlertForge work with OBS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use a hosted overlay URL as a Browser Source, or download the transparent WebM and drop it straight into your scene." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need After Effects or a green screen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. AlertForge is built for a no-edit workflow. It exports transparent WebM files with an alpha channel, so there is no chroma key or rotoscoping involved." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is AlertForge free to use?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can create and export stream alerts for free. Premium credits cover AI video generation and bulk alert packs." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:        #06070D;
+      --bg-2:      #0C0E18;
+      --bg-3:      #141626;
+      --edge:      #24273A;
+      --live:      #FF5A3C;
+      --cyan:      #30F2FF;
+      --violet:    #7B4DFF;
+      --violet-lt: #C4B5FD;
+      --hot:       #EAF2FF;
+      --arc:       #30F2FF;
+      --text:      #E7EBF6;
+      --muted:     #9AA2BC;
+
+      --font-display: "Chakra Petch", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+      --maxw: 1120px;
+      --pad-x: clamp(20px, 5vw, 56px);
+      --sec-y: clamp(72px, 11vw, 148px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad-x); }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan)); }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.03; letter-spacing: -0.01em; }
+
+    .skip { position: absolute; left: -9999px; top: 0; background: var(--cyan); color: var(--bg); padding: 10px 16px; font-family: var(--font-mono); font-size: 13px; z-index: 100; }
+    .skip:focus { left: 12px; top: 12px; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--bg-3); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: 0.005em; color: var(--text); }
+    .brand .mark { width: 26px; height: 26px; border-radius: 6px; display: block; flex: none; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { font-size: 14.5px; color: var(--muted); transition: color 0.18s ease; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { font-family: var(--font-mono); font-size: 13px; color: var(--text) !important; border: 1px solid var(--edge); padding: 8px 15px; border-radius: 3px; transition: border-color 0.18s ease, background 0.18s ease; }
+    .nav-cta:hover { border-color: var(--cyan); background: rgba(48,242,255,0.08); }
+    @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* Hero */
+    .hero { position: relative; padding-top: clamp(56px, 9vw, 104px); padding-bottom: var(--sec-y); overflow: hidden; }
+    .hero::before { content: ""; position: absolute; left: 50%; bottom: -40%; width: 900px; height: 900px; transform: translateX(-50%); background: radial-gradient(circle, rgba(48,242,255,0.16), rgba(123,77,255,0.06) 45%, transparent 68%); pointer-events: none; z-index: 0; }
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 6vw, 80px); align-items: center; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 4.3rem); margin: 20px 0 0; }
+    h1 .accent { background: linear-gradient(92deg, var(--cyan), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 26px rgba(48,242,255,0.35)); }
+    .lede { color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.2rem); max-width: 42ch; margin-top: 22px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn { font-family: var(--font-display); font-weight: 600; font-size: 15px; padding: 13px 24px; border-radius: 4px; display: inline-flex; align-items: center; gap: 9px; transition: transform 0.14s ease, box-shadow 0.2s ease, background 0.2s ease; border: 1px solid transparent; }
+    .btn-primary { background: linear-gradient(180deg, #5DF7FF, #24DCF6); color: #04060E; box-shadow: 0 0 0 1px rgba(48,242,255,0.5) inset, 0 14px 40px -14px rgba(48,242,255,0.65); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(48,242,255,0.7) inset, 0 18px 46px -12px rgba(48,242,255,0.85); }
+    .btn-ghost { border-color: var(--edge); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--cyan); background: rgba(48,242,255,0.05); }
+
+    .trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 30px; font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+    .trust span { display: inline-flex; align-items: center; gap: 7px; }
+    .trust span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); }
+
+    /* Live alert on a transparent stage (signature) */
+    .stage { position: relative; display: grid; place-items: center; }
+    .screen {
+      position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--bg-2);
+      border: 1px solid var(--bg-3); overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.85);
+    }
+    .screen::after { content: "LIVE"; position: absolute; top: 14px; left: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: #fff; background: var(--live); padding: 3px 8px; border-radius: 3px; }
+    .gamefeed { position: absolute; inset: 0; background: radial-gradient(120% 80% at 20% 0%, rgba(123,77,255,0.12), transparent 55%), radial-gradient(90% 70% at 90% 100%, rgba(48,242,255,0.12), transparent 60%); }
+    .alpha-badge { position: absolute; top: 12px; right: 12px; display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; color: var(--muted); background: rgba(0,0,0,0.35); padding: 4px 8px 4px 5px; border-radius: 4px; }
+    .checker { width: 16px; height: 16px; border-radius: 3px; background-image: linear-gradient(45deg, #3a3a3a 25%, transparent 25%), linear-gradient(-45deg, #3a3a3a 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #3a3a3a 75%), linear-gradient(-45deg, transparent 75%, #3a3a3a 75%); background-size: 8px 8px; background-position: 0 0, 0 4px, 4px -4px, -4px 0; background-color: #d8d8d8; }
+
+    .alert { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); width: min(84%, 380px); display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 10px; background: color-mix(in srgb, var(--bg) 72%, #000); border: 1px solid var(--cyan); box-shadow: 0 0 34px -4px rgba(48,242,255,0.5), 0 0 0 1px rgba(123,77,255,0.22) inset; animation: fire 6s ease-in-out infinite; }
+    .alert .avatar { width: 44px; height: 44px; border-radius: 50%; flex: none; background: conic-gradient(from 210deg, var(--cyan), var(--violet), var(--cyan)); display: grid; place-items: center; color: #05060E; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+    .alert .meta { min-width: 0; }
+    .alert .who { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+    .alert .who em { color: var(--cyan); font-style: normal; }
+    .alert .msg { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .alert .amount { margin-left: auto; font-family: var(--font-mono); font-weight: 500; font-size: 15px; color: var(--hot); flex: none; }
+    .spark { position: absolute; left: 50%; bottom: 30px; width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px 4px var(--cyan); opacity: 0; animation: burst 6s ease-out infinite; }
+    .screen-cap { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; }
+    .screen-cap b { color: var(--text); font-weight: 500; }
+
+    @keyframes fire {
+      0%, 4%   { transform: translateX(-50%) translateY(24px) scale(0.96); opacity: 0; }
+      12%      { transform: translateX(-50%) translateY(0) scale(1.015); opacity: 1; }
+      16%, 74% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+      84%,100% { transform: translateX(-50%) translateY(-8px) scale(0.99); opacity: 0; }
+    }
+    @keyframes burst {
+      0%, 6%  { opacity: 0; transform: translate(-50%, 0) scale(0.4); }
+      11%     { opacity: 1; transform: translate(-50%, -30px) scale(1.2); }
+      20%     { opacity: 0; transform: translate(-50%, -64px) scale(0.6); }
+      100%    { opacity: 0; }
+    }
+    .ember { position: absolute; bottom: -10px; width: 3px; height: 3px; border-radius: 50%; background: var(--cyan); opacity: 0; z-index: 1; animation: rise linear infinite; }
+    @keyframes rise { 0% { opacity: 0; transform: translateY(0) scale(1); } 12% { opacity: 0.7; } 100% { opacity: 0; transform: translateY(-360px) scale(0.3); } }
+
+    /* Section shell */
+    .band { padding-block: var(--sec-y); border-top: 1px solid var(--bg-3); }
+    .band-head { max-width: 680px; }
+    .band-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin-top: 14px; }
+    .band-head p { color: var(--muted); margin-top: 16px; }
+
+    /* Two-up feature rows */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 52px; background: var(--bg-3); border: 1px solid var(--bg-3); border-radius: 12px; overflow: hidden; }
+    @media (max-width: 780px) { .duo { grid-template-columns: 1fr; } }
+    .cell { background: var(--bg); padding: 34px 32px 38px; }
+    .cell .tag { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); }
+    .cell h3 { font-size: 1.5rem; margin-top: 12px; }
+    .cell p { color: var(--muted); font-size: 15.5px; margin-top: 12px; }
+    .cell ul { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
+    .cell li { position: relative; padding-left: 24px; font-size: 15px; color: var(--text); }
+    .cell li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px 1px rgba(48,242,255,0.55); }
+    .cell .mini { margin-top: 22px; display: inline-flex; font-family: var(--font-display); font-weight: 600; font-size: 14.5px; color: var(--violet-lt); align-items: center; gap: 7px; }
+    .cell .mini svg { width: 15px; height: 15px; }
+
+    /* Viewer alerts callout */
+    .viewer { position: relative; margin-top: 0; border-radius: 16px; padding: clamp(36px, 5.5vw, 60px); background: radial-gradient(120% 130% at 100% 0%, rgba(123,77,255,0.18), transparent 55%), var(--bg-2); border: 1px solid var(--edge); overflow: hidden; }
+    .viewer h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); max-width: 20ch; }
+    .viewer p { color: var(--muted); margin-top: 16px; max-width: 52ch; }
+    .viewer-stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .chip { border: 1px solid var(--edge); border-radius: 8px; padding: 12px 18px; }
+    .chip .k { font-family: var(--font-mono); font-size: 1.25rem; color: var(--hot); }
+    .chip .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* Steps */
+    .steps { counter-reset: step; margin-top: 52px; display: grid; gap: 20px; }
+    .step { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; padding: 24px 0; border-top: 1px solid var(--bg-3); }
+    .step:first-child { border-top: none; }
+    .step .num { counter-increment: step; font-family: var(--font-mono); font-size: 13px; color: var(--cyan); padding-top: 6px; }
+    .step .num::before { content: counter(step, decimal-leading-zero); }
+    .step h3 { font-size: 1.3rem; }
+    .step p { color: var(--muted); margin-top: 6px; max-width: 60ch; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--bg-3); border: 1px solid var(--bg-3); border-radius: 12px; overflow: hidden; }
+    @media (max-width: 680px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat { background: var(--bg); padding: 30px 24px; text-align: center; }
+    .stat .k { font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: var(--cyan); }
+    .stat .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Platforms */
+    .platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; margin-top: 52px; background: var(--bg-3); border: 1px solid var(--bg-3); border-radius: 12px; overflow: hidden; }
+    .plat { background: var(--bg); padding: 26px 26px 30px; transition: background 0.2s ease; }
+    .plat:hover { background: var(--bg-2); }
+    .plat h3 { font-size: 1.1rem; }
+    .plat p { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+    /* Final CTA */
+    .final { text-align: center; }
+    .final h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); max-width: 16ch; margin-inline: auto; }
+    .final p { color: var(--muted); margin-top: 16px; }
+    .final .cta-row { justify-content: center; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--bg-3); padding-block: 56px 40px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; }
+    @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+    .foot-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 14px; color: var(--text); margin-bottom: 9px; transition: color 0.18s ease; }
+    .foot-col a:hover { color: var(--cyan); }
+    .foot-brand p { color: var(--muted); font-size: 14px; margin-top: 12px; max-width: 30ch; }
+    .foot-bottom { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--bg-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    .foot-bottom small { color: var(--muted); font-family: var(--font-mono); font-size: 12.5px; }
+    .foot-bottom a { color: var(--muted); }
+    .foot-bottom a:hover { color: var(--cyan); }
+
+    :focus-visible { outline: 2px solid var(--arc); outline-offset: 3px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .alert { animation: none; opacity: 1; transform: translateX(-50%); }
+      .spark, .ember { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://alertforge.ai/" aria-label="AlertForge home">
+        <img class="mark" src="https://alertforge.ai/apple-touch-icon.png" alt="" width="26" height="26" />
+        AlertForge
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#generate">Generate</a>
+        <a href="#how">How it works</a>
+        <a href="#platforms">Platforms</a>
+        <a href="https://alertforge.ai/pricing">Pricing</a>
+        <a class="nav-cta" href="https://alertforge.ai/signup">Start Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">AI video generator + alert maker</span>
+          <h1 id="hero-title">Transparent AI video, <span class="accent">generated</span> before your next stream.</h1>
+          <p class="lede">Describe what you want and get a transparent WebM with an alpha channel — animated stream alerts and no-background clips, no green screen, no After Effects, no rotoscoping.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://alertforge.ai/signup">
+              Start free
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="https://alertforge.ai/ai-transparent-video">Transparent videos</a>
+          </div>
+          <div class="trust">
+            <span>Transparent WebM</span>
+            <span>Alpha channel</span>
+            <span>No green screen</span>
+            <span>OBS compatible</span>
+          </div>
+        </div>
+
+        <!-- Signature: a live alert firing, exported as a transparent WebM -->
+        <div class="stage">
+          <div class="screen" aria-hidden="true">
+            <div class="gamefeed"></div>
+            <div class="alpha-badge"><span class="checker"></span>WEBM · ALPHA</div>
+            <div class="alert">
+              <div class="avatar">N</div>
+              <div class="meta">
+                <div class="who"><em>@nightowl</em> generated an alert</div>
+                <div class="msg">AI rendered a custom animation, live</div>
+              </div>
+              <div class="amount">$0.75</div>
+            </div>
+            <div class="spark"></div>
+          </div>
+          <p class="screen-cap"><b>Transparent WebM</b> · drops into OBS · ~30s render</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENERATE: the two core tools -->
+    <section class="band" id="generate" aria-labelledby="generate-title">
+      <div class="wrap band-head">
+        <span class="eyebrow">Two tools, one pipeline</span>
+        <h2 id="generate-title">Generate the video. Build the pack.</h2>
+        <p>Start from a prompt or an image, and AlertForge handles the motion, the background removal, and the export — ready for any streaming setup.</p>
+      </div>
+      <div class="wrap">
+        <div class="duo">
+          <article class="cell">
+            <span class="tag">Transparent video generator</span>
+            <h3>AI video with no background</h3>
+            <p>Turn text or an uploaded image into a clean transparent clip, then get a WebM, a green screen MP4, and a matching sound effect.</p>
+            <ul>
+              <li>Text-to-video or image-to-video</li>
+              <li>Automatic background removal</li>
+              <li>Free AI preview before you generate</li>
+              <li>WebM with alpha channel output</li>
+            </ul>
+            <a class="mini" href="https://alertforge.ai/ai-transparent-video">
+              Generate transparent video
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+          <article class="cell">
+            <span class="tag">Stream alert maker</span>
+            <h3>Full alert packs, AI-animated</h3>
+            <p>Build follower, subscriber, and donation alerts for Twitch, YouTube, and Kick from one template — branded text, animated motion, transparent exports.</p>
+            <ul>
+              <li>A full alert pack from one template</li>
+              <li>Custom text, font, and animation</li>
+              <li>OBS Browser Source compatible</li>
+              <li>Works with Streamlabs &amp; StreamElements</li>
+            </ul>
+            <a class="mini" href="https://alertforge.ai/dashboard">
+              Build an alert pack
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEWER ALERTS -->
+    <section class="band" id="viewer" aria-labelledby="viewer-title">
+      <div class="wrap">
+        <div class="viewer">
+          <span class="eyebrow">New · live now</span>
+          <h2 id="viewer-title">Viewer-generated alerts — a new kind of tip.</h2>
+          <p>Viewers pay to generate a custom AI alert that plays live on your stream, rendered in seconds and PG-moderated. Turn every tip into a moment on screen.</p>
+          <div class="viewer-stats">
+            <div class="chip"><div class="k">$0.75 + 10%</div><div class="l">per alert</div></div>
+            <div class="chip"><div class="k">~30s</div><div class="l">render time</div></div>
+            <div class="chip"><div class="k">PG</div><div class="l">moderated</div></div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://alertforge.ai/dashboard/viewer-alerts">Enable on my channel</a>
+            <a class="btn btn-ghost" href="https://alertforge.ai/viewer-alerts">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="band" id="how" aria-labelledby="how-title">
+      <div class="wrap band-head">
+        <span class="eyebrow">The workflow</span>
+        <h2 id="how-title">Ship in minutes, not weeks.</h2>
+      </div>
+      <div class="wrap">
+        <ol class="steps">
+          <li class="step">
+            <div class="num" aria-hidden="true"></div>
+            <div><h3>Pick your visual direction</h3><p>Choose a style preset and write a short prompt for the motion you want.</p></div>
+          </li>
+          <li class="step">
+            <div class="num" aria-hidden="true"></div>
+            <div><h3>Tune text and motion</h3><p>Set font, color, and timing so the alerts match your stream's personality.</p></div>
+          </li>
+          <li class="step">
+            <div class="num" aria-hidden="true"></div>
+            <div><h3>Export and go live</h3><p>Download transparent WebM files or paste the hosted overlay URL straight into OBS.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="band" aria-label="AlertForge by the numbers">
+      <div class="wrap band-head">
+        <span class="eyebrow">Trusted by streamers</span>
+        <h2>Built for creators worldwide.</h2>
+      </div>
+      <div class="wrap">
+        <div class="stats">
+          <div class="stat"><div class="k">10k+</div><div class="l">Alerts created</div></div>
+          <div class="stat"><div class="k">2k+</div><div class="l">Streamers</div></div>
+          <div class="stat"><div class="k">4.8/5</div><div class="l">User rating</div></div>
+          <div class="stat"><div class="k">&lt;5 min</div><div class="l">Avg. creation</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="band" id="platforms" aria-labelledby="platforms-title">
+      <div class="wrap band-head">
+        <span class="eyebrow">Works everywhere</span>
+        <h2 id="platforms-title">Every platform, one export.</h2>
+        <p>AlertForge outputs transparent WebM files or hosted overlay URLs that fit any streaming stack.</p>
+      </div>
+      <div class="wrap">
+        <div class="platforms">
+          <article class="plat"><h3>Twitch</h3><p>Follower, sub, donation, raid, and bits alerts built for Twitch.</p></article>
+          <article class="plat"><h3>YouTube Live</h3><p>New member, super chat, and subscriber notifications for YouTube streams.</p></article>
+          <article class="plat"><h3>Kick</h3><p>Animated alerts matched to your channel branding on Kick.</p></article>
+          <article class="plat"><h3>Facebook Gaming</h3><p>Professional alerts via the OBS Browser Source.</p></article>
+          <article class="plat"><h3>OBS Browser Source</h3><p>Hosted-URL integration or transparent WebM imports.</p></article>
+          <article class="plat"><h3>Streamlabs &amp; StreamElements</h3><p>Upload your AlertForge WebM files as alert media in either.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="band final" aria-labelledby="final-title">
+      <div class="wrap">
+        <span class="eyebrow" style="justify-content:center">Get started</span>
+        <h2 id="final-title">Your next stream deserves better alerts.</h2>
+        <p>Free to start. No card required. Your first alert pack rendered in minutes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://alertforge.ai/signup">
+            Start free
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://alertforge.ai/pricing">See pricing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col foot-brand">
+          <a class="brand" href="https://alertforge.ai/" aria-label="AlertForge home">
+            <img class="mark" src="https://alertforge.ai/apple-touch-icon.png" alt="" width="26" height="26" />
+            AlertForge
+          </a>
+          <p>AI transparent video generator and stream alert maker for Twitch, YouTube, and Kick.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="https://alertforge.ai/ai-transparent-video">AI Transparent Videos</a>
+          <a href="https://alertforge.ai/signup">Stream Alerts</a>
+          <a href="https://alertforge.ai/viewer-alerts">Viewer-Generated Alerts</a>
+          <a href="https://alertforge.ai/pricing">Pricing</a>
+          <a href="https://alertforge.ai/dashboard">Dashboard</a>
+        </div>
+        <div class="foot-col">
+          <h4>Platforms</h4>
+          <a href="https://alertforge.ai/twitch-alerts">Twitch Alerts</a>
+          <a href="https://alertforge.ai/youtube-alerts">YouTube Stream Alerts</a>
+          <a href="https://alertforge.ai/kick-alerts">Kick Alerts</a>
+          <a href="https://alertforge.ai/obs-alerts">OBS Alerts</a>
+        </div>
+        <div class="foot-col">
+          <h4>Resources</h4>
+          <a href="https://alertforge.ai/blog">Blog</a>
+          <a href="https://alertforge.ai/blog/how-to-make-twitch-alerts">How to Make Twitch Alerts</a>
+          <a href="https://alertforge.ai/blog/best-stream-alerts-2026">Best Stream Alerts 2026</a>
+          <a href="https://alertforge.ai/blog/alertforge-obs-setup">OBS Setup Guide</a>
+        </div>
+        <div class="foot-col">
+          <h4>Support</h4>
+          <a href="https://alertforge.ai/help">Help &amp; Support</a>
+          <a href="https://alertforge.ai/privacy">Privacy Policy</a>
+          <a href="https://alertforge.ai/terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <small>&copy; 2026 AlertForge. All rights reserved.</small>
+        <small><a href="https://alertforge.ai/">alertforge.ai</a></small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var hero = document.querySelector('.hero');
+      if (!hero) return;
+      var colors = ['#30F2FF', '#7B4DFF'];
+      for (var i = 0; i < 14; i++) {
+        var e = document.createElement('span');
+        e.className = 'ember';
+        e.style.left = (8 + Math.random() * 84) + '%';
+        e.style.background = colors[Math.floor(Math.random() * colors.length)];
+        e.style.animationDuration = (4 + Math.random() * 5) + 's';
+        e.style.animationDelay = (Math.random() * 6) + 's';
+        hero.appendChild(e);
+      }
+    })();
+  </script>
+</body>
+</html>
