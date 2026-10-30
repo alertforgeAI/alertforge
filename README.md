@@ -1,4 +1,4 @@
-# Alertforge.ai-
+# AlertForge
 
 This repository is a static snapshot of the alertforge.ai homepage HTML from July 2026, kept for reference. It is not the live site and it is not kept up to date. It shows an earlier version of the product, and some of what it describes is no longer offered. The current site is https://alertforge.ai.
 
